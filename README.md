@@ -1,2 +1,2 @@
 # GSIK-DTA
-The code will come soon.....
+The code will come soon.
