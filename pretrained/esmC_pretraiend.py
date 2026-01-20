@@ -53,11 +53,12 @@ def get_esmc_pretrain(model, df_dir, db_name):
     print(f"✅ Saved {db_name} ESM-C features.")
 
 
-db_names = ['davis', 'kiba', 'metz']
-df_dirs = [r'./KANPM-DTA/datasets/davis/davis_prots.csv', r'./KANPM-DTA/datasets/kiba/kiba_prots.csv', r'./KANPM-DTA/datasets/metz/metz_prots.csv']
+db_names = ['davis', 'kiba', 'metz', 'bindingDB']
+df_dirs = [r'./KANPM-DTA/datasets/davis/davis_prots.csv', r'./KANPM-DTA/datasets/kiba/kiba_prots.csv', r'./KANPM-DTA/datasets/metz/metz_prots.csv', r'./KANPM-DTA/datasets/bindingDB/bindingDB_prots.csv']
 
-for i in range(0,3):
+for i in range(0,4):
     print(f'Compute {df_dirs[i]} protein pretrain feature by esm-c.')
 
     get_esmc_pretrain(model, df_dirs[i], db_names[i])
+
 
