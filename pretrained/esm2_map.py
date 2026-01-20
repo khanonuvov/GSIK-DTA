@@ -57,12 +57,13 @@ def get_esm_contact_map(model, df_dir, db_name, max_length=1200):
     print(f"✅ Saved contact maps for {db_name}.")
         
 
-db_names = ['davis', 'kiba', 'metz', bindingDB]
+db_names = ['davis', 'kiba', 'metz', 'bindingDB']
 df_dirs = [r'./KANPM-DTA/datasets/davis/davis_prots.csv', r'./KANPM-DTA/datasets/kiba/kiba_prots.csv', r'./KANPM-DTA/datasets/metz/metz_prots.csv', r'./KANPM-DTA/datasets/bindingDB/bindingDB_prots.csv']
 
 for i in range(0,4):
     print(f'Compute {df_dirs[i]} protein pretrain feature by esm2.')
     get_esm_contact_map(model, df_dirs[i], db_names[i])
     
+
 
 
