@@ -41,6 +41,6 @@ cd KANPM-DTA
 <h2 id="contact">Contact</h2>
 <p>
   For inquiries, please contact
-  <strong>Md Youshuf Khan Rakib</strong> (Email: 
+  <strong>MD Youshuf Khan Rakib</strong> (Email: 
   <a href="mailto:khanushuf4619@csu.edu.cn">khanushuf4619@csu.edu.cn</a>).
 </p>
