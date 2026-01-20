@@ -47,12 +47,13 @@ def get_chem_pretrain(df_dir, db_name, max_smiles_length=220):
     
     print(f"Saved embeddings for {len(embeddings['vec_dict'])} compounds to {output_path}")
 
-db_names = ['davis', 'kiba', 'metz']
-df_dirs = [r'./KANPM-DTA/datasets/davis/davis_drugs.csv', r'./KANPM-DTA/datasets/kiba/kiba_drugs.csv', r'./KANPM-DTA/datasets/metz/metz_drugs.csv']
+db_names = ['davis', 'kiba', 'metz', 'bindingDB']
+df_dirs = [r'./KANPM-DTA/datasets/davis/davis_drugs.csv', r'./KANPM-DTA/datasets/kiba/kiba_drugs.csv', r'./KANPM-DTA/datasets/metz/metz_drugs.csv', r'./KANPM-DTA/datasets/bindingDB/bindingDB_drugs.csv']
 
-for i in range(0,3):
+for i in range(0,4):
     print(f'Compute {df_dirs[i]} drug pretrain feature by Chemberta-2.')
 
     get_chem_pretrain(df_dirs[i], db_names[i])
+
 
 
