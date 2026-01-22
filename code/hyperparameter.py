@@ -5,7 +5,7 @@ class HyperParameter:
     def __init__(self):
         self.current_time = datetime.now().strftime('%b%d_%H-%M-%S')
         self.data_root = './KANPM-DTA/datasets'
-        self.dataset = 'davis' #kiba, metz
+        self.dataset = 'davis' # davis, kiba, metz, bindingDB
         self.running_set = 'warm' #novel-drug, novel-prot, novel-pair
         
         self.mol2vec_dir = './KANPM-DTA/pretrained/{self.dataset}/{self.dataset}_chem_pretrained.pkl'
