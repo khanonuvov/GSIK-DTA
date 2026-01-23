@@ -99,7 +99,7 @@ def create_fold_setting_cold(df, fold_seed, frac, entities):
         "test": test.reset_index(drop=True),
     }
 
-dataset = 'davis' #kiba, metz
+dataset = 'davis' # kiba, metz, bindingDB
 
 SEED = 41 # 41, 42, 43, 32 33
 
