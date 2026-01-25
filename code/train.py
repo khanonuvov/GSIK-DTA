@@ -13,7 +13,7 @@ from hyperparameter import HyperParameter
 from MyDataset import CustomDataSet, my_collate_fn
 
 import csv
-from metrics import calculate_metrics, get_mse
+from metrics import calculate_metrics
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -37,8 +37,8 @@ def test(model, dataloader):
         mol_mat_mask = mol_mat_mask.to(device)
         prot_mat = prot_mat.to(device)
         prot_mat_mask = prot_mat_mask.to(device)
-        drugh_graph = drugh_graph.to(device).to(device)
-        protein_graph = protein_graph.to(device).to(device)
+        drugh_graph = drugh_graph.to(device)
+        protein_graph = protein_graph.to(device)
         affinity = affinity.to(device)
 
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     train_log = []     
     best_valid_mse = 10  
     patience = 0    
-    model_fromTrain = f'./KANPM-DTA/savemodel/{hp.dataset}-{hp.running_set}-{hp.current_time}.pth'
+    model_fromTrain = f'./KANPM-DTA/savemodel/{hp.dataset}-{hp.running_set}.pth'
                  
     for epoch in range(1, hp.Epoch + 1):
         # trainning
@@ -108,8 +108,8 @@ if __name__ == "__main__":
             mol_mat_mask = mol_mat_mask.to(device)
             prot_mat = prot_mat.to(device)
             prot_mat_mask = prot_mat_mask.to(device)
-            drugh_graph = drugh_graph.to(device).to(device)
-            protein_graph = protein_graph.to(device).to(device)
+            drugh_graph = drugh_graph.to(device)
+            protein_graph = protein_graph.to(device)
             affinity = affinity.to(device)  
                   
             predictions = model(mol_vec, mol_mat, mol_mat_mask, prot_vec, prot_mat, prot_mat_mask, drugh_graph, protein_graph)
@@ -117,12 +117,12 @@ if __name__ == "__main__":
             label = label + affinity.cpu().detach().numpy().reshape(-1).tolist()            
                 
             loss = criterion(predictions.squeeze(), affinity)
-            loss.backward()                
+            loss.backward()
             optimizer.step()
-            optimizer.zero_grad()                                             
+            optimizer.zero_grad()
         pred = np.array(pred)
         label= np.array(label)
-        mse_value, ci_value, rm2_value = calculate_metrics(pred, label)
+        mse_value, ci_value, rm2_value = calculate_metrics(label, pred)
         train_log.append([mse_value, ci_value, rm2_value])
         print(f'Training Log at epoch: {epoch}: mse: {mse_value}')
             
@@ -143,7 +143,7 @@ if __name__ == "__main__":
                 print(f'Traing stop at epoch-{epoch}, model save at-{model_fromTrain}')
                 break 
                
-    log_dir = f"./KANPM-DTA/log/{hp.current_time}-{hp.dataset}-{hp.running_set}.csv"
+    log_dir = f"./KANPM-DTA/log/{hp.dataset}-{hp.running_set}.csv"
     with open(log_dir, "w+")as f:
         writer = csv.writer(f)
         writer.writerow(["mse",  "ci", "rm2"])
@@ -159,13 +159,9 @@ if __name__ == "__main__":
     print(f'Test at, mse: {mse}, ci: {ci}, rm2: {rm2}\n')
     save_metrics['mse'].append(mse)
     save_metrics['ci'].append(ci)
-    save_metrics['rm2'].append(rm2)                             
-        
+    save_metrics['rm2'].append(rm2)                          
         
     # save training log
     test_metrics = pd.DataFrame(save_metrics)    
-    test_metrics.to_csv(f'./KANPM-DTA/log/Test-{hp.dataset}-{hp.running_set}-{hp.current_time}.csv', index=False)    
-    mean_values = test_metrics.mean()
-    variance_values = test_metrics.var()   
+    test_metrics.to_csv(f'./KANPM-DTA/log/Test-{hp.dataset}-{hp.running_set}.csv', index=False)     
     print(f"Dataset-{hp.dataset}-{hp.running_set}")
-    print(f"Mean Values:{pd.concat([mean_values, variance_values], axis=1)}")
