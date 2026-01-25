@@ -1,18 +1,13 @@
-import os
 import numpy as np 
 import pandas as pd 
 import pickle
 import random
-from tqdm import tqdm
-from rdkit import Chem
 from model import MODEL as Model
 from hyperparameter import HyperParameter
 from MyDataset import CustomDataSet, pred_my_collate_fn
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
-from metrics import calculate_metrics
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -35,8 +30,8 @@ def test(model, dataloader):
         mol_mat_mask = mol_mat_mask.to(device)
         prot_mat = prot_mat.to(device)
         prot_mat_mask = prot_mat_mask.to(device)
-        drugh_graph = drugh_graph.to(device).to(device)
-        protein_graph = protein_graph.to(device).to(device)
+        drugh_graph = drugh_graph.to(device)
+        protein_graph = protein_graph.to(device)
 
         with torch.no_grad():
             pred = model(mol_vec, mol_mat, mol_mat_mask, prot_vec, prot_mat, prot_mat_mask, drugh_graph, protein_graph)
