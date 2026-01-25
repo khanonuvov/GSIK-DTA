@@ -10,21 +10,6 @@ from math import sqrt
 from sklearn.metrics import average_precision_score
 from scipy import stats
 
-
-def calculate_metrics_and_return(Y, P):
-    # aupr = get_aupr(Y, P)
-    # cindex = get_cindex(Y, P)  # DeepDTA
-    cindex = get_ci(Y, P)
-    rm2 = get_rm2(Y, P)  # DeepDTA
-    mse = get_mse(Y, P)
-    
-    print('cindex:', cindex)
-
-    print('rm2:', rm2)
-    print('mse:', mse)
-    return cindex, rm2, mse
-
-
 def get_ci(y,f):
     ind = np.argsort(y)
     y = y[ind]
@@ -139,4 +124,5 @@ def calculate_metrics(Y, P):
     cindex = get_cindex(Y, P)  # DeepDTA
     rm2 = get_rm2(Y, P)  # DeepDTA
     mse = get_mse(Y, P)
+
     return mse, cindex, rm2
