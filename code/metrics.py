@@ -121,8 +121,9 @@ def get_spearman(y, f):
 
 def calculate_metrics(Y, P):
     # aupr = get_aupr(Y, P)
-    cindex = get_cindex(Y, P)  # DeepDTA
-    rm2 = get_rm2(Y, P)  # DeepDTA
+    cindex = get_cindex(Y, P)
+    rm2 = get_rm2(Y, P)
     mse = get_mse(Y, P)
 
     return mse, cindex, rm2
+
