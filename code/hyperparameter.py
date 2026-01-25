@@ -4,8 +4,8 @@ from datetime import datetime
 class HyperParameter:
     def __init__(self):
         self.data_root = './KANPM-DTA/datasets'
-        self.dataset = 'davis' # davis, kiba, metz, bindingDB
-        self.running_set = 'warm' # warm, novel-drug, novel-prot, novel-pair
+        self.dataset = 'davis' #davis, kiba, metz, bindingDB
+        self.running_set = 'warm' #warm, novel-drug, novel-prot, novel-pair
         
         self.mol2vec_dir = './KANPM-DTA/pretrained/{self.dataset}/{self.dataset}_chem_pretrained.pkl'
         self.protvec_dir = './KANPM-DTA/pretrained/{self.dataset}/{self.dataset}_esmc_pretrain.pkl'
