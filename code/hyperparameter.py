@@ -3,7 +3,6 @@ from datetime import datetime
 
 class HyperParameter:
     def __init__(self):
-        self.current_time = datetime.now().strftime('%b%d_%H-%M-%S')
         self.data_root = './KANPM-DTA/datasets'
         self.dataset = 'davis' # davis, kiba, metz, bindingDB
         self.running_set = 'warm' # warm, novel-drug, novel-prot, novel-pair
