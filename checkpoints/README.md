@@ -1,2 +1,5 @@
-<h2 id="Trained Models Weight">Trained Models Weight</h2>
-<p>Download the trained models weight from <a href="https://www.kaggle.com/datasets/khanonuvov/gsik-dta-pretrained-models"><code>here</code></a>.</p>
+<h2 id="trained-model-weights">Trained Model Weights</h2>
+<p>
+  The trained model weights are available on Kaggle:
+  <a href="https://www.kaggle.com/datasets/khanonuvov/gsik-dta-pretrained-models">Download</a>.
+</p>
