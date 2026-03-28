@@ -38,20 +38,21 @@ cd KANPM-DTA
 <h2 id="Prediction">Prediction</h2>
 <pre><code>python code/pred.py</code></pre>
 
-<h2 id="contact">Citation</h2>
+<h2 id="citation">Citation</h2>
 <p>
   If you find our paper or code useful in your research, please consider citing:
-  @article{10.1093/bib/bbag112,
-    author = {Rakib, M D Youshuf Khan and Alamin, Muhammad Habibulla and Li, Jiamu and Mamun, Sheikh Sohan and Gobena, Kaleb Amsalu and Ren, Shengbing},
-    title = {KANPM-DTA: improving drug–target affinity prediction with Kolmogorov–Arnold networks and pretrained models},
-    journal = {Briefings in Bioinformatics},
-    volume = {27},
-    number = {2},
-    pages = {bbag112},
-    year = {2026},
-    month = {03}
-}
 </p>
+
+<pre><code>@article{10.1093/bib/bbag112,
+  author  = {Rakib, M D Youshuf Khan and Alamin, Muhammad Habibulla and Li, Jiamu and Mamun, Sheikh Sohan and Gobena, Kaleb Amsalu and Ren, Shengbing},
+  title   = {KANPM-DTA: improving drug–target affinity prediction with Kolmogorov–Arnold networks and pretrained models},
+  journal = {Briefings in Bioinformatics},
+  volume  = {27},
+  number  = {2},
+  pages   = {bbag112},
+  year    = {2026},
+  month   = {03}
+}</code></pre>
 
 <h2 id="contact">Contact</h2>
 <p>
