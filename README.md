@@ -44,7 +44,7 @@ cd KANPM-DTA
 </p>
 
 <pre><code>@article{10.1093/bib/bbag112,
-  author  = {Rakib, M D Youshuf Khan and Alamin, Muhammad Habibulla and Li, Jiamu and Mamun, Sheikh Sohan and Gobena, Kaleb Amsalu and Ren, Shengbing},
+  author  = {Rakib, MD Youshuf Khan and Alamin, Muhammad Habibulla and Li, Jiamu and Mamun, Sheikh Sohan and Gobena, Kaleb Amsalu and Ren, Shengbing},
   title   = {KANPM-DTA: improving drug–target affinity prediction with Kolmogorov–Arnold networks and pretrained models},
   journal = {Briefings in Bioinformatics},
   volume  = {27},
