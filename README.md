@@ -4,7 +4,8 @@
   <!-- Adjust width as needed (e.g., 800–1100) -->
   <img src="images/architecture.jpg" alt="Model Architecture" width="900">
 </p>
-<p align="center"><em>Figure 1. KANPM-DTA model architecture.</em></p>
+<p align="center"><em>Figure 1. The proposed KANPM-DTA model architecture.(A)Graph and sequence-based protein feature encoding.(B)Graph and sequence-based drug 
+feature encoding. (C) Adaptive feature learning between drug and protein graph-sequence features.</em></p>
 
 <h2 id="requirements">Requirements</h2>
 <ul>
