@@ -33,7 +33,7 @@ cd KANPM-DTA
 <pre><code>python code/cold_split.py</code></pre>
 
 <h2 id="Train the Model">Train the Model</h2>
-<pre><code>python code/main.py</code></pre>
+<pre><code>python code/train.py</code></pre>
 
 <h2 id="Prediction">Prediction</h2>
 <pre><code>python code/pred.py</code></pre>
