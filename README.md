@@ -6,8 +6,6 @@
 </p>
 <p align="center"><em>Figure 1. The proposed KANPM-DTA model architecture. (A) Graph and sequence-based protein feature encoding. (B) Graph and sequence-based drug 
 feature encoding. (C) Adaptive feature learning between drug and protein graph-sequence features.</em></p>
-<h2 id="requirements">Paper Link</h2>
-<p>The paper KANPM-DTA: Improving Drug-Target Affinity Prediction with Kolmogorov-Arnold Networks and Pre-trained Models, Click <a href="https://doi.org/10.1093/bib/bbag112"><code>here</code></a>.</p>
 
 <h2 id="requirements">Requirements</h2>
 <ul>
