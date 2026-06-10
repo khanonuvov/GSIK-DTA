@@ -9,7 +9,7 @@ feature encoding. (C) Adaptive feature learning between drug and protein graph-s
 
 <h2 id="requirements">Requirements</h2>
 <ul>
-  <li>Python 3.9.21</li>
+  <li>Python==3.9.21</li>
   <li>numpy==2.0.2</li>
   <li>pandas==2.2.3</li>
   <li>torch==2.6.0</li>
